@@ -2,10 +2,17 @@ package app;
 
 import lab04.Employees;
 
+/**
+ * Driver Class
+ * Runs the Employees list and sort
+ * @author Francisco Igor
+ *
+ */
 public class Driver {
 
 	/**
-	 * @param args
+	 * Main application
+	 * @param args Command line arguments
 	 */
 	public static void main(String[] args) {
 		

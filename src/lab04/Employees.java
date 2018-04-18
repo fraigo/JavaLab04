@@ -3,18 +3,36 @@ package lab04;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * List of employees 
+ * @author Francisco Igor
+ *
+ */
 public class Employees {
 
-	ArrayList<Employee> list;
+	/**
+	 * List of Hockey Players
+	 */
 	ArrayList<HockeyPlayer> hpList;
+	/**
+	 * List of Professors
+	 */
 	ArrayList<Professor> profList;
+	/**
+	 * List of Parents
+	 */
 	ArrayList<Parent> prntList;
+	/**
+	 * List of Gas Station Attendants
+	 */
 	ArrayList<GasStationAttendant> gsaList;
 	
+	/**
+	 * Basic constructor
+	 * Initialize and fills each list of employees
+	 */
 	public Employees(){
 		
-		list=new ArrayList<Employee>();
-				
 		hpList=new ArrayList<HockeyPlayer>(); 
 		hpList.add(new HockeyPlayer("Wayne Gretzky", 894));
 		hpList.add(new HockeyPlayer("Who Ever", 0));
@@ -39,15 +57,15 @@ public class Employees {
 		gsaList=new ArrayList<GasStationAttendant>();
 		gsaList.add(new GasStationAttendant("Joe Smith", 10));
 		gsaList.add(new GasStationAttendant("Tony Baloney", 100));
-
 		gsaList.add(new GasStationAttendant("Benjamin Franklin", 100));
-
 		gsaList.add(new GasStationAttendant("Mary Fairy", 101));
-
-		list.add(new GasStationAttendant("Bee See", 1));
+		gsaList.add(new GasStationAttendant("Bee See", 1));
 		
 	}
 	
+	/**
+	 * Prints all the lists of employees
+	 */
 	public void print(){
 		for (int i = 0; i < hpList.size(); i++) {
 			System.out.println(hpList.get(i).toString());
@@ -62,7 +80,10 @@ public class Employees {
 			System.out.println(gsaList.get(i).toString());
 		}
 	}
-	
+
+	/**
+	 * Sorts each list of employees using the compareTo() method of each class
+	 */
 	public void sort(){
 		Collections.sort(hpList);
 		Collections.sort(profList);

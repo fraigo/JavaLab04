@@ -1,18 +1,39 @@
 package lab04;
 
+/**
+ * GasStationAttendant class
+ * @author Francisco Igor
+ *
+ */
 public class GasStationAttendant extends Employee implements Comparable<GasStationAttendant> {
 
+	/**
+	 * Number of dollars stolen 
+	 */
 	int numberOfDollarsStolenPerDay;
 	
+	/**
+	 * Constructor 
+	 * @param name Employee name
+	 * @param numberOfDollarsStolenPerDay Number of dollars stolen
+	 */
 	public GasStationAttendant(String name,int numberOfDollarsStolenPerDay){
 		super(name);
 		setNumberOfDollarsStolenPerDay(numberOfDollarsStolenPerDay);
 	}
 	
+	/**
+	 * Sets the Number of dollars stolen
+	 * @param dollars Number of dollars stolen
+	 */
 	public void setNumberOfDollarsStolenPerDay(int dollars) {
 		this.numberOfDollarsStolenPerDay = dollars;
 	}
 	
+	/**
+	 * Gets the Number of dollars stolen
+	 * @return Number of dollars stolen
+	 */
 	public int getNumberOfDollarsStolenPerDay() {
 		return numberOfDollarsStolenPerDay;
 	}
@@ -47,20 +68,32 @@ public class GasStationAttendant extends Employee implements Comparable<GasStati
 		return super.toString()+"\n Dollars stealed:"+getNumberOfDollarsStolenPerDay();
 	}
 	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numberOfDollarsStolenPerDay;
+		return result;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
-		if (obj==null){
-			return false;
-		}
-		if (this.equals(obj)){
+		if (this == obj) {
 			return true;
 		}
-		if (!(obj instanceof GasStationAttendant)){
+		if (obj == null) {
 			return false;
-		}else{
-			GasStationAttendant obj1=(GasStationAttendant)obj;
-			return (obj1.getNumberOfDollarsStolenPerDay()==this.getNumberOfDollarsStolenPerDay());
 		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		GasStationAttendant other = (GasStationAttendant) obj;
+		if (numberOfDollarsStolenPerDay != other.numberOfDollarsStolenPerDay) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override
@@ -73,5 +106,7 @@ public class GasStationAttendant extends Employee implements Comparable<GasStati
 			return 0;
 		}
 	}
+	
+	
 
 }
